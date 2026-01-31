@@ -1,42 +1,58 @@
-# Trading Performance Dashboard (Python + SQL + Tableau)
+# 📊 Trading Performance Dashboard  
+**Python + SQL + Tableau Analytics Pipeline**
 
-This portfolio project turns raw trade logs into a clean, repeatable analytics pipeline and a Tableau-ready dataset.
+This portfolio project demonstrates a complete analytics workflow that transforms raw trading logs into a structured, repeatable performance reporting system and a Tableau-ready dataset.
 
-## What it does
-1. **Ingest**: reads the Excel trade report (`Replay_Trading_CME_MINI_ES1!_2025-09-27_79f2b.xlsx`, sheet: `List of trades`)
-2. **Transform**: pairs Entry/Exit rows into a single trade record (one row per trade)
-3. **Model**: produces a `trades_fact` dataset suitable for BI tools
-4. **Metrics**: computes core trading KPIs (win rate, expectancy, profit factor, max drawdown)
-5. **Output**: exports CSV files for Tableau dashboarding
+Although the example uses trading data, the same pipeline structure applies to financial, operational, and performance analytics in business environments.
 
-## Outputs (for Tableau)
-- `trades_fact.csv` — one row per trade (timestamps, prices, size, net PnL, run-up, drawdown)
-- `equity_curve.csv` — equity and drawdown over time
-- `kpis_summary.csv` — summary KPI table (single row)
+---
 
-## Core KPIs included
-- Win Rate
-- Average Win / Average Loss
-- Expectancy (per trade)
-- Profit Factor
-- Net PnL
-- Max Drawdown (from equity curve)
+## 🔄 What This Project Does
 
-## How to run
+**Ingest**  
+Processes structured trade reports and prepares them for analysis.
+
+**Transform**  
+Pairs entry and exit events into unified trade records (one row per trade).
+
+**Model**  
+Builds a clean `trades_fact` dataset designed for BI and dashboard tools.
+
+**Metrics**  
+Calculates core performance KPIs using consistent, transparent logic.
+
+**Output**  
+Exports structured datasets ready for Tableau dashboarding and reporting.
+
+---
+
+## 📁 Outputs (for Tableau)
+
+| File | Description |
+|------|-------------|
+`trades_fact.csv` | One row per trade (timestamps, prices, size, net PnL, run-up, drawdown) |
+`equity_curve.csv` | Equity progression and drawdown over time |
+`kpis_summary.csv` | Summary KPI table (single-row performance snapshot) |
+
+> **Note:** Raw source data is not included in this repository for privacy reasons. The pipeline structure and KPI logic are fully demonstrated.
+
+---
+
+## 📈 Core KPIs Included
+
+- **Win Rate**
+- **Average Win vs. Average Loss**
+- **Expectancy (per trade)**
+- **Profit Factor**
+- **Net PnL**
+- **Maximum Drawdown** (from equity curve)
+
+These KPIs mirror the type of performance metrics used in business reporting, including revenue performance, marketing efficiency, and operational risk monitoring.
+
+---
+
+## ▶️ How to Run the Pipeline
+
 ```bash
 pip install -r requirements.txt
 python etl_from_excel.py
-```
-
-## Tableau dashboard suggestion
-**Dashboard 1 — Overview**
-- KPI tiles (Net PnL, Win Rate, Profit Factor, Expectancy, Max Drawdown)
-- Equity curve line chart
-
-**Dashboard 2 — Trade Quality**
-- PnL distribution (histogram)
-- Run-up vs Drawdown scatter
-
-**Dashboard 3 — Drilldowns**
-- PnL by week/month
-- PnL by side (Long/Short)

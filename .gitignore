@@ -17,7 +17,7 @@ env/
 # --- Secrets ---
 .env
 
-# --- Data privacy (IMPORTANT) ---
+# --- Data privacy ---
 *.csv
 *.xlsx
 *.xls

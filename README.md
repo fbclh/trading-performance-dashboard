@@ -44,7 +44,7 @@ Exports structured datasets ready for Tableau dashboarding and reporting.
 These KPIs mirror the type of performance metrics used in business reporting, including revenue performance, marketing efficiency, and operational risk monitoring.
 
 
-## ▶️ How to Run the Pipeline
+## How to Run the Pipeline
 
 ```bash
 pip install -r requirements.txt

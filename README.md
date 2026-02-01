@@ -5,8 +5,6 @@ This portfolio project demonstrates a complete analytics workflow that transform
 
 Although the example uses trading data, the same pipeline structure applies to financial, operational, and performance analytics in business environments.
 
----
-
 ## What This Project Does
 
 **Ingest**  
@@ -24,8 +22,6 @@ Calculates core performance KPIs using consistent, transparent logic.
 **Output**  
 Exports structured datasets ready for Tableau dashboarding and reporting.
 
----
-
 ## Outputs (for Tableau)
 
 | File | Description |
@@ -35,8 +31,6 @@ Exports structured datasets ready for Tableau dashboarding and reporting.
 `kpis_summary.csv` | Summary KPI table (single-row performance snapshot) |
 
 > **Note:** Raw source data is not included in this repository for privacy reasons. The pipeline structure and KPI logic are fully demonstrated.
-
----
 
 ## Core KPIs Included
 
@@ -49,7 +43,6 @@ Exports structured datasets ready for Tableau dashboarding and reporting.
 
 These KPIs mirror the type of performance metrics used in business reporting, including revenue performance, marketing efficiency, and operational risk monitoring.
 
----
 
 ## ▶️ How to Run the Pipeline
 

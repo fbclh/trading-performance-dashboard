@@ -1,4 +1,4 @@
-# 📊 Trading Performance Dashboard  
+# Trading Performance Dashboard  
 **Python + SQL + Tableau Analytics Pipeline**
 
 This portfolio project demonstrates a complete analytics workflow that transforms raw trading logs into a structured, repeatable performance reporting system and a Tableau-ready dataset.
@@ -7,7 +7,7 @@ Although the example uses trading data, the same pipeline structure applies to f
 
 ---
 
-## 🔄 What This Project Does
+## What This Project Does
 
 **Ingest**  
 Processes structured trade reports and prepares them for analysis.
@@ -26,7 +26,7 @@ Exports structured datasets ready for Tableau dashboarding and reporting.
 
 ---
 
-## 📁 Outputs (for Tableau)
+## Outputs (for Tableau)
 
 | File | Description |
 |------|-------------|
@@ -38,7 +38,7 @@ Exports structured datasets ready for Tableau dashboarding and reporting.
 
 ---
 
-## 📈 Core KPIs Included
+## Core KPIs Included
 
 - **Win Rate**
 - **Average Win vs. Average Loss**

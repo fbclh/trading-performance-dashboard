@@ -1,0 +1,10 @@
+# Dark theme for Trading Performance Dashboard
+# https://docs.streamlit.io/develop/concepts/configuration/theming
+
+[theme]
+base = "dark"
+primaryColor = "#5B8FF9"
+backgroundColor = "#0E1117"
+secondaryBackgroundColor = "#262730"
+textColor = "#FAFAFA"
+font = "sans serif"

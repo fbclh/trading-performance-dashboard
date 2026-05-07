@@ -1,8 +1,30 @@
-.venv/
+# --- OS ---
+.DS_Store
+Thumbs.db
+
+# --- Python ---
 __pycache__/
 *.py[cod]
-.DS_Store
 .pytest_cache/
+
+# --- Virtual environments ---
+.venv/
+venv/
+env/
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+
+# --- Secrets ---
 .env
 .env.*
 !.env.example
+
+# --- Raw / private inputs (do not commit real trade exports here) ---
+*.xlsx
+*.xls
+data/raw/
+data/private/
+
+# --- Optional local output folder ---
+output/

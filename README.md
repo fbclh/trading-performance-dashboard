@@ -1,78 +1,93 @@
-# Trading Performance Dashboard (Python + SQL + Tableau)
+# Trading Performance Dashboard
 
-This portfolio project turns raw trade logs into a clean, repeatable analytics pipeline and a Tableau-ready dataset.
+**Python + SQL + Streamlit + Tableau**
+
+The project analyzes trading strategy performance and risk metrics using historical trade data. It includes data processing, KPI calculation, a dark-themed **Streamlit** dashboard, and **Tableau-ready** CSV exports.
+
+Although the example uses trading data, the same pipeline structure applies to financial, operational, and performance analytics in business environments.
+
+**Repository:** [github.com/fbclh/trading-performance-dashboard](https://github.com/fbclh/trading-performance-dashboard)
 
 ## Project layout
+
 ```
-trading_dashboard_project/
-├── app/           # Streamlit dashboard
-├── data/          # Generated CSVs (ETL output)
-├── etl/           # Excel → CSV pipeline
-├── sql/           # Ad hoc SQL (e.g. KPIs)
+├── app/              # Streamlit dashboard
+├── data/             # Generated CSVs (ETL output; sample files included for the demo)
+├── etl/              # Excel → CSV pipeline
+├── sql/              # Ad hoc SQL (e.g. KPIs)
 ├── screenshots/
-├── README.md
+├── .streamlit/       # Theme (dark)
 ├── requirements.txt
-└── pyproject.toml
+├── pyproject.toml
+└── README.md
 ```
 
 ## What it does
-1. **Ingest**: reads the Excel trade report (`Replay_Trading_CME_MINI_ES1!_2025-09-27_79f2b.xlsx`, sheet: `List of trades`)
-2. **Transform**: pairs Entry/Exit rows into a single trade record (one row per trade)
-3. **Model**: produces a `trades_fact` dataset suitable for BI tools
-4. **Metrics**: computes core trading KPIs (win rate, expectancy, profit factor, max drawdown)
-5. **Output**: exports CSV files for Tableau dashboarding
 
-## Outputs (for Tableau)
+1. **Ingest** — Reads structured trade reports (Excel: sheet `List of trades` — path is configurable in `etl/etl_from_excel.py`).
+2. **Transform** — Pairs entry and exit rows into one row per trade.
+3. **Model** — Builds a `trades_fact`-style dataset for BI tools.
+4. **Metrics** — Computes win rate, expectancy, profit factor, net PnL, max drawdown, and related KPIs.
+5. **Output** — Writes CSVs under `data/` for Tableau or other tools, and powers the Streamlit app.
+
+> **Note:** Raw proprietary exports are not required to explore the repo; sample CSV outputs are included so the dashboard runs without running the ETL.
+
+## Outputs (Tableau / BI)
+
 Written to `data/` by the ETL:
-- `data/trades_fact.csv` — one row per trade (timestamps, prices, size, net PnL, run-up, drawdown)
-- `data/equity_curve.csv` — equity and drawdown over time
-- `data/kpis_summary.csv` — summary KPI table (single row)
 
-## Core KPIs included
-- Win Rate
-- Average Win / Average Loss
-- Expectancy (per trade)
-- Profit Factor
-- Net PnL
-- Max Drawdown (from equity curve)
+| File | Description |
+|------|-------------|
+| `data/trades_fact.csv` | One row per trade (timestamps, prices, size, net PnL, run-up, drawdown) |
+| `data/equity_curve.csv` | Equity progression and drawdown over time |
+| `data/kpis_summary.csv` | Single-row KPI snapshot |
+
+## Core KPIs
+
+- Win rate  
+- Average win vs. average loss  
+- Expectancy (per trade)  
+- Profit factor  
+- Net PnL  
+- Maximum drawdown (from equity curve)  
 
 ## How to run
-From the **project root** (`trading_dashboard_project/`):
+
+From the **project root**:
 
 ```bash
 pip install -r requirements.txt
 python etl/etl_from_excel.py
 ```
 
-### Run the Streamlit dashboard
+### Streamlit dashboard
+
 ```bash
 streamlit run app/dashboard_app.py
 ```
 
+(Optional) Create a virtual environment first: `python -m venv .venv` and activate it, then `pip install -r requirements.txt`.
+
 ## Linting and formatting
-The project uses **Ruff** (modern, fast lint + format). Config is in `pyproject.toml`.
+
+Config is in `pyproject.toml` (Ruff).
 
 ```bash
 pip install ruff
-ruff check .          # lint
-ruff format .         # format
+ruff check .
+ruff format .
 ```
 
-**In Cursor / VS Code:** Install the [Ruff extension](https://marketplace.visualstudio.com/items?itemName=charliermarsh.ruff) to get inline diagnostics and format-on-save. No other extensions are required for Python style.
-
 ### SQL (`sql/kpis.sql`)
-- **Formatting:** Use the [SQL Formatter](https://marketplace.visualstudio.com/items?itemName=adpyke.vscode-sql-formatter) extension (or Prettier with a SQL plugin) for consistent indentation and line breaks. No project config required for the single file.
-- **Linting:** Optional. [SQLFluff](https://marketplace.visualstudio.com/items?itemName=dorzey.vscode-sqlfluff) gives style and dialect checks if you add more SQL later; for one small file it’s optional.
 
-## Tableau dashboard suggestion
-**Dashboard 1 — Overview**
-- KPI tiles (Net PnL, Win Rate, Profit Factor, Expectancy, Max Drawdown)
-- Equity curve line chart
+Optional formatting with a [SQL Formatter](https://marketplace.visualstudio.com/items?itemName=adpyke.vscode-sql-formatter) extension; optional linting with [SQLFluff](https://marketplace.visualstudio.com/items?itemName=dorzey.vscode-sqlfluff).
 
-**Dashboard 2 — Trade Quality**
-- PnL distribution (histogram)
-- Run-up vs Drawdown scatter
+## Tableau ideas
 
-**Dashboard 3 — Drilldowns**
-- PnL by week/month
-- PnL by side (Long/Short)
+- **Overview** — KPI tiles, equity curve, drawdown  
+- **Trade quality** — PnL distribution, run-up vs drawdown  
+- **Drilldowns** — PnL by period, by side (long/short)  
+
+## License
+
+See [LICENSE](LICENSE) (MIT).

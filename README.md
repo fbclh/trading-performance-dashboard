@@ -119,10 +119,10 @@ These KPIs mirror the type of performance metrics commonly used in financial ana
 ![Dashboard](screenshots/kpis.png)
 
 ### Equity Curve & Drawdown
-![Equity Curve & Drawdown](screenshots/equity-curve-&-drawdown.png)
+![Equity Curve & Drawdown](screenshots/equity-curve-%26-drawdown.png)
 
 ### Duration vs PnL, PnL Distribution, PnL by Entry Hour
-![Duration vs PnL, PnL Distribution, PnL by Entry Hour](screenshots/duration-vs-pnl-&-pnl-distribution-&-pnl-by-entry-hour.png)
+![Duration vs PnL, PnL Distribution, PnL by Entry Hour](screenshots/duration-vs-pnl-%26-pnl-distribution-%26-pnl-by-entry-hour.png)
 
 ### PnL per Trade
 ![PnL per Trade](screenshots/pnl-per-trade.png)
@@ -162,6 +162,11 @@ Configuration is defined in `pyproject.toml` using Ruff.
 pip install ruff
 ruff check .
 ruff format .
+
+# SQL formatting/linting for KPI queries
+pip install sqlfluff
+sqlfluff lint sql/kpis.sql --dialect sqlite
+# sqlfluff fix sql/kpis.sql --dialect sqlite
 ```
 
 ---

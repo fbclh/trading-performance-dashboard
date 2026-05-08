@@ -115,18 +115,17 @@ These KPIs mirror the type of performance metrics commonly used in financial ana
 
 ### Full Dashboard
 ![Dashboard](screenshots/full-dashboard.png)
-
 ### KPIs
 ![Dashboard](screenshots/kpis.png)
 
 ### Equity Curve & Drawdown
-![Equity Curve](screenshots/equity-drawdown.png)
+![Equity Curve & Drawdown](screenshots/equity-curve-&-drawdown.png)
 
-### Duration vs PnL & PnL Distribution & Entry by Hour 
-![PnL Distribution](screenshots/equity-curve-&-drawdown.png)
+### Duration vs PnL, PnL Distribution, PnL by Entry Hour
+![Duration vs PnL, PnL Distribution, PnL by Entry Hour](screenshots/duration-vs-pnl-&-pnl-distribution-&-pnl-by-entry-hour.png)
 
 ### PnL per Trade
-![Entry Hour](screenshots/duration-vs-pnl-&-pnl-distribution-&-pnl-by-entry-hourentry-hour.png)
+![PnL per Trade](screenshots/pnl-per-trade.png)
 
 ---
 

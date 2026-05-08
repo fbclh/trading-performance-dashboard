@@ -107,23 +107,26 @@ These KPIs mirror the type of performance metrics commonly used in financial ana
 
 ## Tableau Dashboard
 
-[View Interactive Tableau Dashboard](https://public.tableau.com/app/profile/fabio.coelho6106/viz/TradingPerformanceDashboard_17743138751960/TPD?publish=yes)
+[View Interactive Tableau Dashboard](https://public.tableau.com/app/profile/fabio.coelho6106/viz/TradingPerformanceDashboard_17743138751960/TPD)
 
 ---
 
 ## Dashboard Preview
 
 ### Full Dashboard
-![Dashboard](screenshots/dashboard-full.png)
+![Dashboard](screenshots/full-dashboard.png)
+
+### KPIs
+![Dashboard](screenshots/kpis.png)
 
 ### Equity Curve & Drawdown
 ![Equity Curve](screenshots/equity-drawdown.png)
 
-### PnL Distribution
-![PnL Distribution](screenshots/pnl-distribution.png)
+### Duration vs PnL & PnL Distribution & Entry by Hour 
+![PnL Distribution](screenshots/equity-curve-&-drawdown.png)
 
-### Entry Hour Analysis
-![Entry Hour](screenshots/entry-hour.png)
+### PnL per Trade
+![Entry Hour](screenshots/duration-vs-pnl-&-pnl-distribution-&-pnl-by-entry-hourentry-hour.png)
 
 ---
 

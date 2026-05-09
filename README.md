@@ -8,6 +8,31 @@ Although the example uses trading data, the same pipeline structure applies to f
 
 ---
 
+## Dashboard Preview
+
+### Full Dashboard
+![Dashboard](screenshots/full-dashboard.png)
+
+### KPI Overview
+![KPIs](screenshots/kpis.png)
+
+### Equity Curve & Drawdown
+![Equity Curve & Drawdown](screenshots/equity-curve-%26-drawdown.png)
+
+### Duration vs PnL, PnL Distribution & Entry Hour Analysis
+![Duration vs PnL, PnL Distribution & Entry Hour](screenshots/duration-vs-pnl-%26-pnl-distribution-%26-pnl-by-entry-hour.png)
+
+### PnL per Trade
+![PnL per Trade](screenshots/pnl-per-trade.png)
+
+---
+
+## Tableau Dashboard
+
+[View Interactive Tableau Dashboard](https://public.tableau.com/app/profile/fabio.coelho6106/viz/TradingPerformanceDashboard_17743138751960/TPD)
+
+---
+
 ## Analytics Objectives
 
 This project demonstrates:
@@ -23,19 +48,29 @@ This project demonstrates:
 
 ---
 
-## Project Layout
+## Dashboard Features
 
-```text
-├── app/              # Streamlit dashboard
-├── data/             # Generated CSVs (ETL output; sample files included for the demo)
-├── etl/              # Excel → CSV pipeline
-├── sql/              # Ad hoc SQL (e.g. KPIs)
-├── screenshots/
-├── .streamlit/       # Theme configuration
-├── requirements.txt
-├── pyproject.toml
-└── README.md
-```
+- KPI overview cards
+- Equity curve visualization
+- Drawdown analysis
+- PnL distribution analysis
+- Trade duration vs profitability
+- Time-of-day performance analysis
+- Trade-by-trade analysis
+
+---
+
+## Core KPIs
+
+- Win Rate
+- Average Win vs Average Loss
+- Expectancy (per trade)
+- Profit Factor
+- Net PnL
+- Maximum Drawdown
+- Equity Curve Performance
+
+These KPIs mirror the type of performance metrics commonly used in financial analytics, business intelligence, operational reporting, and performance monitoring systems.
 
 ---
 
@@ -79,53 +114,32 @@ Written to `data/` by the ETL pipeline:
 
 ---
 
-## Core KPIs
+## Project Layout
 
-- Win Rate
-- Average Win vs Average Loss
-- Expectancy (per trade)
-- Profit Factor
-- Net PnL
-- Maximum Drawdown
-- Equity Curve Performance
-
-These KPIs mirror the type of performance metrics commonly used in financial analytics, business intelligence, operational reporting, and performance monitoring systems.
-
----
-
-## Dashboard Features
-
-- KPI overview cards
-- Equity curve visualization
-- Drawdown analysis
-- PnL distribution analysis
-- Trade duration vs profitability
-- Time-of-day performance analysis
-- Trade-by-trade analysis
+```text
+├── app/              # Streamlit dashboard
+├── data/             # Generated CSVs (ETL output; sample files included for the demo)
+├── etl/              # Excel → CSV pipeline
+├── sql/              # Ad hoc SQL (e.g. KPIs)
+├── screenshots/
+├── .streamlit/       # Theme configuration
+├── requirements.txt
+├── pyproject.toml
+└── README.md
+```
 
 ---
 
-## Tableau Dashboard
+## Technologies Used
 
-[View Interactive Tableau Dashboard](https://public.tableau.com/app/profile/fabio.coelho6106/viz/TradingPerformanceDashboard_17743138751960/TPD)
-
----
-
-## Dashboard Preview
-
-### Full Dashboard
-![Dashboard](screenshots/full-dashboard.png)
-### KPIs
-![Dashboard](screenshots/kpis.png)
-
-### Equity Curve & Drawdown
-![Equity Curve & Drawdown](screenshots/equity-curve-%26-drawdown.png)
-
-### Duration vs PnL, PnL Distribution, PnL by Entry Hour
-![Duration vs PnL, PnL Distribution, PnL by Entry Hour](screenshots/duration-vs-pnl-%26-pnl-distribution-%26-pnl-by-entry-hour.png)
-
-### PnL per Trade
-![PnL per Trade](screenshots/pnl-per-trade.png)
+- Python
+- SQL
+- Streamlit
+- Tableau
+- Pandas
+- Data Visualization
+- ETL Pipelines
+- Performance Analytics
 
 ---
 
@@ -162,25 +176,17 @@ Configuration is defined in `pyproject.toml` using Ruff.
 pip install ruff
 ruff check .
 ruff format .
-
-# SQL formatting/linting for KPI queries
-pip install sqlfluff
-sqlfluff lint sql/kpis.sql --dialect sqlite
-# sqlfluff fix sql/kpis.sql --dialect sqlite
 ```
 
----
+### SQL Formatting / Linting
 
-## Technologies Used
+```bash
+pip install sqlfluff
+sqlfluff lint sql/kpis.sql --dialect sqlite
 
-- Python
-- SQL
-- Streamlit
-- Tableau
-- Pandas
-- Data Visualization
-- ETL Pipelines
-- Performance Analytics
+# Optional auto-fix
+# sqlfluff fix sql/kpis.sql --dialect sqlite
+```
 
 ---
 
